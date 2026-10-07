@@ -1,0 +1,272 @@
+{
+  "schema": "anticloud.tier-bench/1",
+  "project": "ARGOPY",
+  "source": {
+    "repo_path": "E:\\fenta\\Downloads\\The Anticloud\\ANTICLOUD_REPOS\\MARINE_BIOLOGY\\ARGOPY\\UPSTREAM_CLONE",
+    "git": {
+      "head": "676dab583de9b282f8992a88d9a6270794e87697",
+      "url": "https://github.com/euroargodev/argopy",
+      "branch": "master",
+      "committed_at": "2026-10-05T08:03:45+02:00"
+    }
+  },
+  "metrics": {
+    "files_total": 23,
+    "source_files_scanned": 15,
+    "lines_of_code": 2970,
+    "languages": {
+      ".py": 15,
+      ".pbs": 5,
+      "(none)": 1,
+      ".md": 1,
+      ".png": 1
+    }
+  },
+  "licence": {
+    "spdx": "MIT",
+    "class": "A",
+    "source_file": "LICENSE",
+    "redistribution_allowed": true
+  },
+  "dependencies": {
+    "count": 0,
+    "unique": 0,
+    "by_ecosystem": {},
+    "list": []
+  },
+  "owasp_top10": {
+    "total_findings": 13,
+    "files_with_findings": 7,
+    "severity": {
+      "high": 6,
+      "medium": 0,
+      "low": 7
+    },
+    "categories": {
+      "A01-BrokenAccessControl": {
+        "count": 0,
+        "findings": []
+      },
+      "A02-CryptographicFailures": {
+        "count": 0,
+        "findings": []
+      },
+      "A03-Injection": {
+        "count": 6,
+        "findings": [
+          {
+            "severity": "high",
+            "file": "src/database.py",
+            "line": 111,
+            "cwe": "CWE-78",
+            "snippet": "os.system(\"rm -Rf %s/*.pkl\" % work_dir)"
+          },
+          {
+            "severity": "high",
+            "file": "src/eape.py",
+            "line": 209,
+            "cwe": "CWE-78",
+            "snippet": "os.system(command)"
+          },
+          {
+            "severity": "high",
+            "file": "src/interp.py",
+            "line": 60,
+            "cwe": "CWE-78",
+            "snippet": "os.system(command)"
+          },
+          {
+            "severity": "high",
+            "file": "src/masternslave.py",
+            "line": 183,
+            "cwe": "CWE-78",
+            "snippet": "os.system(\"rm -f monitor_mns*txt\")"
+          },
+          {
+            "severity": "high",
+            "file": "src/stats.py",
+            "line": 217,
+            "cwe": "CWE-78",
+            "snippet": "os.system(\"rm %s\" % monitor_file)"
+          },
+          {
+            "severity": "high",
+            "file": "src/tiles.py",
+            "line": 265,
+            "cwe": "CWE-78",
+            "snippet": "os.system(command)"
+          }
+        ]
+      },
+      "A04-InsecureDesign": {
+        "count": 6,
+        "findings": [
+          {
+            "severity": "low",
+            "file": "src/atlas.py",
+            "line": 49,
+            "cwe": "CWE-",
+            "snippet": "# TODO rename clim into meanstate and/or eape depending on the context"
+          },
+          {
+            "severity": "low",
+            "file": "src/eape.py",
+            "line": 135,
+            "cwe": "CWE-",
+            "snippet": "latmin=max(latmin,-80) # TODO: replace with min(latglo) and merge with stats"
+          },
+          {
+            "severity": "low",
+            "file": "src/interp.py",
+            "line": 65,
+            "cwe": "CWE-",
+            "snippet": "#     # TODO: super slow"
+          },
+          {
+            "severity": "low",
+            "file": "src/masternslave.py",
+            "line": 74,
+            "cwe": "CWE-",
+            "snippet": "# todo: remove the reqr that is done"
+          },
+          {
+            "severity": "low",
+            "file": "src/stats.py",
+            "line": 135,
+            "cwe": "CWE-",
+            "snippet": "latmin = max(latmin, -80)  # TODO: replace with min(latglo)"
+          },
+          {
+            "severity": "low",
+            "file": "src/tiles.py",
+            "line": 86,
+            "cwe": "CWE-",
+            "snippet": "# ci-dessous pb avec la dateline=>TODO"
+          }
+        ]
+      },
+      "A05-SecurityMisconfiguration": {
+        "count": 0,
+        "findings": []
+      },
+      "A06-VulnerableComponents": {
+        "count": 0,
+        "findings": []
+      },
+      "A07-AuthFailures": {
+        "count": 0,
+        "findings": []
+      },
+      "A08-SoftwareDataIntegrity": {
+        "count": 1,
+        "findings": [
+          {
+            "severity": "low",
+            "file": "src/atlas.py",
+            "line": 40,
+            "cwe": "CWE-319",
+            "snippet": "\"software respository\": \"http://github.com/pvthinker/argopy\""
+          }
+        ]
+      },
+      "A09-LoggingMonitoringFailures": {
+        "count": 0,
+        "findings": []
+      },
+      "A10-SSRF": {
+        "count": 0,
+        "findings": []
+      }
+    }
+  },
+  "owasp_llm_top10": {
+    "total_findings": 0,
+    "files_with_findings": 0,
+    "severity": {
+      "high": 0,
+      "medium": 0,
+      "low": 0
+    },
+    "categories": {
+      "LLM01-PromptInjection": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM02-SensitiveInfoDisclosure": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM03-SupplyChain": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM04-DataPoisoning": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM05-ImproperOutputHandling": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM06-ExcessiveAgency": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM07-SystemPromptLeak": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM08-VectorEmbeddingWeaknesses": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM09-Misinformation": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM10-UnboundedConsumption": {
+        "count": 0,
+        "findings": []
+      }
+    }
+  },
+  "sbom": {
+    "bomFormat": "CycloneDX",
+    "specVersion": "1.5",
+    "serialNumber": "urn:uuid:c06afa1f-afe3-561b-ac9f-7049385e9f44",
+    "version": 1,
+    "metadata": {
+      "timestamp": "2026-10-06T12:41:43Z",
+      "component": {
+        "type": "application",
+        "name": "ARGOPY",
+        "version": "676dab583de9",
+        "bom-ref": "pkg:generic/anticloud/ARGOPY@676dab583de9",
+        "purl": "pkg:generic/anticloud/ARGOPY@676dab583de9",
+        "licenses": [
+          {
+            "license": {
+              "id": "MIT"
+            }
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "anticloud:source-commit",
+          "value": "676dab583de9b282f8992a88d9a6270794e87697"
+        },
+        {
+          "name": "anticloud:source-url",
+          "value": "https://github.com/euroargodev/argopy"
+        },
+        {
+          "name": "anticloud:tier",
+          "value": "tier-agent"
+        }
+      ]
+    },
+    "components": []
+  },
+  "elapsed_seconds": 7.98
+}

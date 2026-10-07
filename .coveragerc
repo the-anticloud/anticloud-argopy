@@ -1,0 +1,16 @@
+[run]
+omit =
+    argopy/tests/*
+    argopy/related/argo_documentation.py
+    argopy/related/doi_snapshot.py
+    *deprec*
+    *__init__*
+[report]
+exclude_lines =
+    pragma: no cover
+    def __repr__
+    def _
+    if self.debug:
+    if settings.DEBUG
+    if __name__ == .__main__.:
+    @deprecated
